@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using UnityEngine;
 
-public abstract class UnityViewModel : MonoBehaviour, IViewModel
+public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropertyChanged
 {
 	public object Parameters
 	{
@@ -10,11 +10,7 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel
 		set;
 	}
 
-	public Action<object, string> PropertyChanged
-	{
-		get;
-		set;
-	}
+	public event PropertyChangedEventHandler PropertyChanged;
 
 	public void SetParameters<T>(T parameters)
 	{
@@ -29,6 +25,6 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel
 
 	protected void OnPropertyChanged(string propertyName)
 	{
-		this.PropertyChanged?.Invoke(this, propertyName);
+		this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
 }

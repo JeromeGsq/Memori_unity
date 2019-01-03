@@ -12,11 +12,11 @@ public class MainTabbarView : BaseView<MainTabbarViewModel>
 		base.Start();
 	}
 
-	public override void OnPropertyChanged(object sender, string property)
+	public override void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
 	{
 		base.OnPropertyChanged(sender, property);
 
-		if(property == nameof(this.ViewModel.Tabs))
+		if(property.PropertyName == nameof(this.ViewModel.Tabs))
 		{
 			foreach(var item in this.ViewModel.Tabs)
 			{

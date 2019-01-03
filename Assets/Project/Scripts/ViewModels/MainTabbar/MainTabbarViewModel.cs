@@ -21,17 +21,10 @@ public class MainTabbarViewModel : BaseViewModel
 
 	private void Start()
 	{
-		StartCoroutine(CoroutineUtils.DelaySeconds(
-			() =>
-				{
-					this.Tabs = new List<Tuple<Type, int>>{
-						new Tuple<Type, int>(typeof(TodayPageViewModel), 0),
-						new Tuple<Type, int>(typeof(TodayPageViewModel), 1),
-						new Tuple<Type, int>(typeof(TodayPageViewModel), 2),
-					};
-				}, 
-			1)
-		);
-	
+		this.Tabs = new List<Tuple<Type, int>>{
+			new Tuple<Type, int>(typeof(TodayPageViewModel), 0),
+			new Tuple<Type, int>(typeof(TodayPageViewModel), 1),
+			new Tuple<Type, int>(typeof(TodayPageViewModel), 2),
+		};
 	}
 }

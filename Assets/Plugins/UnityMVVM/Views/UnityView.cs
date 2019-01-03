@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.ComponentModel;
+using UnityEngine;
 
 public class UnityView : MonoBehaviour, IView
 {
@@ -7,7 +8,7 @@ public class UnityView : MonoBehaviour, IView
 		var components = this.GetComponents(typeof(UnityEngine.Component));
 
 		IView viewComponent = default(IView);
-		IViewModel viewModelComponent = default(IViewModel);
+		INotifyPropertyChanged viewModelComponent = default(INotifyPropertyChanged);
 
 		foreach(var component in components)
 		{
@@ -21,14 +22,14 @@ public class UnityView : MonoBehaviour, IView
 				}
 
 				// And if this gameobject contains a component of type IViewModel...
-				if(inter.Equals(typeof(IViewModel)))
+				if(inter.Equals(typeof(INotifyPropertyChanged)))
 				{
-					viewModelComponent = component as IViewModel;
+					viewModelComponent = component as INotifyPropertyChanged;
 				}
 			}
 		}
 
-		if(viewComponent != default(IView) && viewModelComponent != default(IViewModel))
+		if(viewComponent != default(IView) && viewModelComponent != default(INotifyPropertyChanged))
 		{
 			// ... subscribe 
 			viewModelComponent.PropertyChanged += viewComponent.OnPropertyChanged;
@@ -84,7 +85,7 @@ public class UnityView : MonoBehaviour, IView
 	{
 	}
 
-	public virtual void OnPropertyChanged(object sender, string property)
+	public virtual void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
 	{
 	}
 }

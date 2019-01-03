@@ -2,5 +2,5 @@
 
 public interface IView 
 {
-	 void OnPropertyChanged(object sender, string property);
+	 void OnPropertyChanged(object sender, PropertyChangedEventArgs property);
 }

@@ -8,10 +8,5 @@ public interface IViewModel
 		get; set;
 	}
 
-	Action<object, string> PropertyChanged
-	{
-		get; set;
-	}
-
 	void SetParameters<T>(T parameters);
 }
