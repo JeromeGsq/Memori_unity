@@ -1,6 +1,14 @@
-﻿public interface IViewModel
+﻿using System;
+using System.ComponentModel;
+
+public interface IViewModel
 {
 	object Parameters
+	{
+		get; set;
+	}
+
+	Action<object, string> PropertyChanged
 	{
 		get; set;
 	}

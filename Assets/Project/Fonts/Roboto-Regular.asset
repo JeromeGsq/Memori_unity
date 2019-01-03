@@ -4,26 +4,27 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Roboto-Regular
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 2018147868
   material: {fileID: 21019370909666150}
-  materialHashCode: 0
+  materialHashCode: 621783831
   fontAssetType: 1
   m_fontInfo:
     Name: Roboto
     PointSize: 42
-    Scale: 0
+    Scale: 1
     CharacterCount: 231
     LineHeight: 49.25
     Baseline: 0
     Ascender: 38.9375
-    CapHeight: 0
+    CapHeight: 29.875
     Descender: -10.25
     CenterLine: 0
     SuperscriptOffset: 38.9375
@@ -33,7 +34,7 @@ MonoBehaviour:
     UnderlineThickness: 2.0507812
     strikethrough: 10.431818
     strikethroughThickness: 2.0507812
-    TabWidth: 0
+    TabWidth: 103.75
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -42,10 +43,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 10.375
+    height: 49.1875
     xOffset: 0
-    yOffset: 0
+    yOffset: 38.9375
     xAdvance: 10.375
     scale: 1
   - id: 33
@@ -2184,7 +2185,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Roboto-Regular Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_ShaderKeywords: 
@@ -2245,9 +2247,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -2282,7 +2284,8 @@ Material:
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Roboto-Regular Atlas
   m_ImageContentsHash:
     serializedVersion: 2

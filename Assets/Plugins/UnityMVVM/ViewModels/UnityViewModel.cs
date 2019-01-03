@@ -1,7 +1,8 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using UnityEngine;
 
-public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropertyChanged
+public abstract class UnityViewModel : MonoBehaviour, IViewModel
 {
 	public object Parameters
 	{
@@ -9,14 +10,18 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropert
 		set;
 	}
 
-	public event PropertyChangedEventHandler PropertyChanged;
+	public Action<object, string> PropertyChanged
+	{
+		get;
+		set;
+	}
 
 	public void SetParameters<T>(T parameters)
 	{
 		this.Parameters = parameters;
 	}
 
-	protected void Set<T>(ref T property,  object value, string propertyName)
+	protected void Set<T>(ref T property, object value, string propertyName)
 	{
 		property = (T)value;
 		this.OnPropertyChanged(propertyName);
@@ -24,6 +29,6 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropert
 
 	protected void OnPropertyChanged(string propertyName)
 	{
-		this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		this.PropertyChanged?.Invoke(this, propertyName);
 	}
 }

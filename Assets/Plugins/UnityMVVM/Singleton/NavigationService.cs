@@ -68,15 +68,26 @@ public class NavigationService : SceneSingleton<NavigationService>
 		this.ShowViewModel<object>(destinationViewModelType, null);
 	}
 
-	public void ShowViewModel<T>(Type destinationViewModelType, T parameters)
+	public void ShowViewModel(Type destinationViewModelType, Transform root)
 	{
+		this.ShowViewModel<object>(destinationViewModelType, null, root);
+	}
+
+	public void ShowViewModel<T>(Type destinationViewModelType, T parameters, Transform rootView = null)
+	{
+		// Use default root
+		if(rootView == null)
+		{
+			rootView = this.RootView;
+		}
+
 		foreach(var viewAndViewModelTypeGameObject in this.viewAndViewModelTypePrefabs)
 		{
 			// If this is the correct destinationViewModelType...
 			if(viewAndViewModelTypeGameObject.Type.Equals(destinationViewModelType))
 			{
 				// ... create View ...
-				GameObject instantiatedView = Instantiate(viewAndViewModelTypeGameObject.GameObject, this.RootView);
+				GameObject instantiatedView = Instantiate(viewAndViewModelTypeGameObject.GameObject, rootView);
 				var components = instantiatedView.GetComponents(typeof(Component));
 
 				// ... and initialize its ViewModel

@@ -1,9 +1,38 @@
 ﻿using UnityEngine;
 
-public class UnityView : MonoBehaviour {
-
+public class UnityView : MonoBehaviour, IView
+{
 	public virtual void Awake()
 	{
+		var components = this.GetComponents(typeof(UnityEngine.Component));
+
+		IView viewComponent = default(IView);
+		IViewModel viewModelComponent = default(IViewModel);
+
+		foreach(var component in components)
+		{
+			var interfaces = component.GetType().GetInterfaces();
+			foreach(var inter in interfaces)
+			{
+				// If this gameobject contains a component of type IView...
+				if(inter.Equals(typeof(IView)))
+				{
+					viewComponent = component as IView;
+				}
+
+				// And if this gameobject contains a component of type IViewModel...
+				if(inter.Equals(typeof(IViewModel)))
+				{
+					viewModelComponent = component as IViewModel;
+				}
+			}
+		}
+
+		if(viewComponent != default(IView) && viewModelComponent != default(IViewModel))
+		{
+			// ... subscribe 
+			viewModelComponent.PropertyChanged += viewComponent.OnPropertyChanged;
+		}
 	}
 
 	public virtual void Start()
@@ -55,4 +84,7 @@ public class UnityView : MonoBehaviour {
 	{
 	}
 
+	public virtual void OnPropertyChanged(object sender, string property)
+	{
+	}
 }
