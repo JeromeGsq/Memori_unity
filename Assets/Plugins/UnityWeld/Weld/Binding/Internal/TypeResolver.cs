@@ -294,16 +294,40 @@ namespace UnityWeld.Binding.Internal
                 .SelectMany(type => GetPublicMethods(type)
                     .Select(m => new BindableMember<MethodInfo>(m, type))
                 )
-                .Where(m => m.Member.GetParameters().Length == 0)
+                //.Where(m => m.Member.GetParameters().Length == 0)
                 .Where(m => m.Member.GetCustomAttributes(typeof(BindingAttribute), false).Any() 
                     && !m.MemberName.StartsWith("get_")) // Exclude property getters, since we aren't doing anything with the return value of the bound method anyway.
                 .ToArray();
         }
 
-        /// <summary>
-        /// Find collection properties that can be data-bound.
-        /// </summary>
-        public static BindableMember<PropertyInfo>[] FindBindableCollectionProperties(CollectionBinding target)
+
+		/// <summary>
+		/// Get a list of methods in the view model that we can bind to.
+		/// </summary>
+		public static ParameterInfo FindBindableMethodsParameters(EventBinding targetScript, string method)
+		{
+			var methodParametersInfos =  FindAvailableViewModelTypes(targetScript)
+				.SelectMany(type => GetPublicMethods(type)
+					.Select(m => new BindableMember<MethodInfo>(m, type))
+				)
+				//.Where(m => m.Member.GetParameters().Length == 0)
+				.Where(m => m.Member.GetCustomAttributes(typeof(BindingAttribute), false).Any()
+					&& !m.MemberName.StartsWith("get_") && m.MemberName.StartsWith(method))
+				.ToArray();
+
+			if(methodParametersInfos != null && methodParametersInfos.Length > 0 && methodParametersInfos[0] != null)
+			{
+				var parameters = methodParametersInfos[0].ViewModelType.GetMethod(method).GetParameters()[0];
+				return parameters;
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// Find collection properties that can be data-bound.
+		/// </summary>
+		public static BindableMember<PropertyInfo>[] FindBindableCollectionProperties(CollectionBinding target)
         {
             return FindBindableProperties(target)
                 .Where(p => typeof(IEnumerable).IsAssignableFrom(p.Member.PropertyType))

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityWeld.Binding;
 
 [Binding]
@@ -46,8 +47,9 @@ public class MainTabbarViewModel : BaseViewModel
 	}
 
 	[Binding]
-	public void SetTabIndex(int index)
+	public void SetTabIndex(string index)
 	{
-		this.SelectedIndex = 0;
+		int.TryParse(index, out int value);
+		this.SelectedIndex = value;
 	}
 }

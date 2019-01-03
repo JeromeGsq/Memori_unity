@@ -415,6 +415,36 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &6823991318314971624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400138625902273790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bef21c537b34d42ac448efcda1fbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelMethodName: MainTabbarViewModel.SetTabIndex
+  viewEventName: UnityEngine.UI.Button.onClick
+  parameter: 1
+--- !u!114 &2619829000042129989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400138626931605727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bef21c537b34d42ac448efcda1fbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelMethodName: MainTabbarViewModel.SetTabIndex
+  viewEventName: UnityEngine.UI.Button.onClick
+  parameter: 2
 --- !u!114 &15482805473363225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewModelMethodName: MainTabbarViewModel.SetTabIndex
   viewEventName: UnityEngine.UI.Button.onClick
+  parameter: 0
 --- !u!1001 &3781330868049118539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,6 +965,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7be82848e6c87478d6c3765c52cc9a, type: 3}
+--- !u!1 &8400138626931605727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5617581989901440481, guid: cf7be82848e6c87478d6c3765c52cc9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4136240273623536958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4439142245297226547 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 359690690707445261, guid: cf7be82848e6c87478d6c3765c52cc9a,
@@ -1190,6 +1227,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7be82848e6c87478d6c3765c52cc9a, type: 3}
+--- !u!1 &8400138625902273790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5617581989901440481, guid: cf7be82848e6c87478d6c3765c52cc9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4136240274584400159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4439142246279128850 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 359690690707445261, guid: cf7be82848e6c87478d6c3765c52cc9a,

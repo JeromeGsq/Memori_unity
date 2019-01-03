@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityWeld.Binding.Internal;
@@ -36,6 +37,15 @@ namespace UnityWeld.Binding
         [SerializeField, FormerlySerializedAs("uiEventName")]
         private string viewEventName;
 
+		public string Parameter
+        {
+            get { return parameter; }
+            set { parameter = value; }
+        }
+
+        [SerializeField]
+		private string parameter;
+
         /// <summary>
         /// Watches a Unity event for updates.
         /// </summary>
@@ -50,9 +60,17 @@ namespace UnityWeld.Binding
                 out methodName, 
                 out viewModel
             );
-            var viewModelMethod = viewModel.GetType().GetMethod(methodName, new Type[0]);
 
-            string eventName;
+			var viewModelMethod = viewModel.GetType().GetMethod(methodName);
+			var parametersInfos = viewModel.GetType().GetMethod(methodName).GetParameters();
+
+			var parameters = new List<string>(){};
+			for(int i = 0; i < parametersInfos.Length; i++)
+			{
+				parameters.Add(parameter);
+			}
+
+			string eventName;
             Component view;
             ParseViewEndPointReference(viewEventName, out eventName, out view);
 
@@ -61,7 +79,7 @@ namespace UnityWeld.Binding
                 {
                     if (viewModelMethod != null)
                     {
-                        viewModelMethod.Invoke(viewModel, new object[0]);
+                        viewModelMethod.Invoke(viewModel, parameters.ToArray());
                     }
                 });
         }
