@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityWeld.Binding;
 
 [Binding]
@@ -10,7 +12,9 @@ public class TodayPageViewModel : BaseViewModel
 	private string today;
 	private string remainingTime;
 
-	private float scrollAmount;
+	private Single scrollAmount;
+
+	private List<Feeling> feelings;
 
 	#region Properties
 	public User User
@@ -58,7 +62,7 @@ public class TodayPageViewModel : BaseViewModel
 	}
 
 	[Binding]
-	public float ScrollAmount
+	public Single ScrollAmount
 	{
 		get
 		{
@@ -67,6 +71,18 @@ public class TodayPageViewModel : BaseViewModel
 		set
 		{
 			this.Set(ref this.scrollAmount, value, nameof(this.ScrollAmount));
+		}
+	}
+
+	public List<Feeling> Feelings
+	{
+		get
+		{
+			return this.feelings;
+		}
+		set
+		{
+			this.Set(ref this.feelings, value, nameof(this.Feelings));
 		}
 	}
 	#endregion
@@ -85,6 +101,15 @@ public class TodayPageViewModel : BaseViewModel
 		this.Hello = $"Hello, {this.User.Name}";
 
 		this.RemainingTime = this.GetRemainingTime();
+
+		this.Feelings = new List<Feeling>()
+		{
+			new Feeling{Title = "Faim"},
+			new Feeling{Title = "Social"},
+			new Feeling{Title = "Energie"},
+			new Feeling{Title = "Divertissement"},
+			new Feeling{Title = "Amour"},
+		};
 	}
 
 	private User LoadUser()
@@ -102,7 +127,7 @@ public class TodayPageViewModel : BaseViewModel
 		hours = (24 - now.Hour) - 1;
 		minutes = (60 - now.Minute) - 1;
 
-		return $"Temps restant avant demain : {hours}:{minutes}";
+		return $"Temps restant avant demain : {hours.ToString("00")}:{minutes.ToString("00")}";
 	}
 
 	public void SetScrollAmount(float y)

@@ -27,4 +27,12 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropert
 	{
 		this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
+
+	protected void RaiseAllPropertyChanged(Type viewModelType)
+	{
+		foreach(var property in viewModelType.GetProperties())
+		{
+			this.OnPropertyChanged(property.Name);
+		}
+	}
 }

@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityWeld.Binding;
+﻿using UnityWeld.Binding;
 
 [Binding]
 public class BaseViewModel : UnityViewModel

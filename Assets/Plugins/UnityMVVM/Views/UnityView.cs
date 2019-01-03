@@ -5,6 +5,59 @@ public class UnityView : MonoBehaviour, IView
 {
 	public virtual void Awake()
 	{
+		this.Init();
+	}
+
+	public virtual void Start()
+	{
+	}
+
+	public virtual void OnEnable()
+	{
+	}
+
+	public virtual void Update()
+	{
+	}
+
+	public virtual void LateUpdate()
+	{
+	}
+
+	public virtual void FixedUpdate()
+	{
+	}
+
+	public virtual void OnDisable()
+	{
+	}
+
+	public virtual void OnDestroy()
+	{
+	}
+
+	public virtual void OnGUI()
+	{
+	}
+
+	public virtual void OnTriggerEnter()
+	{
+	}
+
+	public virtual void OnTriggerExit()
+	{
+	}
+
+	public virtual void OnCollisionEnter()
+	{
+	}
+
+	public virtual void OnCollisionExit()
+	{
+	}
+
+	protected void Init()
+	{
 		var components = this.GetComponents(typeof(UnityEngine.Component));
 
 		IView viewComponent = default(IView);
@@ -34,55 +87,6 @@ public class UnityView : MonoBehaviour, IView
 			// ... subscribe 
 			viewModelComponent.PropertyChanged += viewComponent.OnPropertyChanged;
 		}
-	}
-
-	public virtual void Start()
-	{
-	}
-
-	public virtual void OnEnable()
-	{
-	}
-
-	public virtual void Update()
-	{
-	}
-
-	public virtual void LateUpdate()
-	{
-	}
-
-	public virtual void FixedUpdate()
-	{
-	}
-
-	public virtual void OnDisable()
-	{
-	}
-
-
-	public virtual void OnDestroy()
-	{
-	}
-
-	public virtual void OnGUI()
-	{
-	}
-
-	public virtual void OnTriggerEnter()
-	{
-	}
-
-	public virtual void OnTriggerExit()
-	{
-	}
-
-	public virtual void OnCollisionEnter()
-	{
-	}
-
-	public virtual void OnCollisionExit()
-	{
 	}
 
 	public virtual void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
