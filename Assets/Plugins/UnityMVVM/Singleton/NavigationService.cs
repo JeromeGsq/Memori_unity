@@ -73,7 +73,7 @@ public class NavigationService : SceneSingleton<NavigationService>
 		this.ShowViewModel<object>(destinationViewModelType, null, root);
 	}
 
-	public void ShowViewModel<T>(Type destinationViewModelType, T parameters, Transform rootView = null)
+	public GameObject ShowViewModel<T>(Type destinationViewModelType, T parameters, Transform rootView = null)
 	{
 		// Use default root
 		if(rootView == null)
@@ -106,8 +106,11 @@ public class NavigationService : SceneSingleton<NavigationService>
 				}
 
 				this.navigationStack.Add(Twin.New(instantiatedView, viewAndViewModelTypeGameObject.Type));
+				return instantiatedView;
 			}
 		}
+
+		return null;
 	}
 
 	public void CloseViewModel(IViewModel viewModelInstance)
