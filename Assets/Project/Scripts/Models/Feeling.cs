@@ -4,4 +4,14 @@
 	{
 		get; set;
 	}
+
+	public FeelingType FeelingType
+	{
+		get; set;
+	}
+
+	public int Value
+	{
+		get; set;
+	}
 }

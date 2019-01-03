@@ -21,6 +21,8 @@ public class SliderViewModel : BaseViewModel
 		{
 			this.Set(ref this.currentAmount, value, nameof(this.CurrentAmount));
 			this.OnPropertyChanged(nameof(this.Rating));
+
+			UserLogic.Instance.SetFeelingValue(this.feeling.FeelingType, (int)value);
 		}
 	}
 
@@ -46,6 +48,7 @@ public class SliderViewModel : BaseViewModel
 	public void SetModel(Feeling feeling)
 	{
 		this.feeling = feeling;
+		this.CurrentAmount = this.feeling.Value;
 		this.RaiseAllPropertyChanged(typeof(SliderViewModel));
 	}
 }

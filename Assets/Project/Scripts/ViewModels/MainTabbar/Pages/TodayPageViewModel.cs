@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityWeld.Binding;
 
 [Binding]
@@ -12,9 +11,7 @@ public class TodayPageViewModel : BaseViewModel
 	private string today;
 	private string remainingTime;
 
-	private Single scrollAmount;
-
-	private List<Feeling> feelings;
+	private float scrollAmount;
 
 	#region Properties
 	public User User
@@ -78,11 +75,7 @@ public class TodayPageViewModel : BaseViewModel
 	{
 		get
 		{
-			return this.feelings;
-		}
-		set
-		{
-			this.Set(ref this.feelings, value, nameof(this.Feelings));
+			return UserLogic.Instance.User.Feelings;
 		}
 	}
 	#endregion
@@ -101,15 +94,6 @@ public class TodayPageViewModel : BaseViewModel
 		this.Hello = $"Hello, {this.User.Name}";
 
 		this.RemainingTime = this.GetRemainingTime();
-
-		this.Feelings = new List<Feeling>()
-		{
-			new Feeling{Title = "Faim"},
-			new Feeling{Title = "Social"},
-			new Feeling{Title = "Energie"},
-			new Feeling{Title = "Divertissement"},
-			new Feeling{Title = "Amour"},
-		};
 	}
 
 	private User LoadUser()

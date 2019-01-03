@@ -38,7 +38,7 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 
 		if(property.PropertyName == nameof(this.ViewModel.Feelings))
 		{
-			 this.InitFeelingViews(this.ViewModel.Feelings);
+			this.InitFeelingViews(this.ViewModel.Feelings);
 		}
 	}
 
@@ -48,6 +48,11 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 		{
 			Debug.LogWarning("InitFeelingViews() : feelings are null");
 			return;
+		}
+
+		foreach(var item in this.feelingViews)
+		{
+			Destroy(item.gameObject);
 		}
 
 		Debug.LogWarning("InitFeelingViews() : generating feeling cells");
