@@ -55,9 +55,8 @@ namespace UnityWeld_Editor
 			ShowMethodMenu(targetScript, TypeResolver.FindBindableMethods(targetScript));
 
 			var parametersInfos = TypeResolver.FindBindableMethodsParameters(targetScript, targetScript.ViewModelMethodName.Split('.')[1]);
-			parametersRawInfos = EditorGUILayout.TextField($"[string only] {parametersInfos.Name} : ", parametersRawInfos);
-
-			UpdateProperty(updatedValue => targetScript.Parameter = updatedValue, targetScript.Parameter, parametersRawInfos, "aezezaeza");
+			targetScript.Parameter = EditorGUILayout.TextField($"[string only] {parametersInfos.Name} : ", targetScript.Parameter);
+			UpdateProperty(updatedValue => targetScript.Parameter = updatedValue, targetScript.Parameter, targetScript.Parameter, "aezezaeza");
 
 			EditorStyles.label.fontStyle = defaultLabelStyle;
 		}
