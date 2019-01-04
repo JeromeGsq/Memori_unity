@@ -33,6 +33,7 @@ public class UserLogic : SceneSingleton<UserLogic>
 			user = new User
 			{
 				Name = "Hélène",
+				Description = "",
 				Feelings = new List<Feeling>()
 				{
 					new Feeling{
@@ -62,6 +63,15 @@ public class UserLogic : SceneSingleton<UserLogic>
 		}
 
 		return user;
+	}
+
+	public void SetDescription(string value)
+	{
+		if(!string.IsNullOrEmpty(value))
+		{
+			this.User.Description = value;
+			this.SaveUser(this.User);
+		}
 	}
 
 	public void SaveUser(User user)

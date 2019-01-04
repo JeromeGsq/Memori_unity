@@ -42,6 +42,7 @@ public class MainTabbarViewModel : BaseViewModel
 			new Tuple<Type, int>(typeof(CalendarPageViewModel), 0),
 			new Tuple<Type, int>(typeof(TodayPageViewModel), 1),
 			new Tuple<Type, int>(typeof(SearchPageViewModel), 2),
+			new Tuple<Type, int>(typeof(RemindersPageViewModel), 3),
 		};
 	}
 

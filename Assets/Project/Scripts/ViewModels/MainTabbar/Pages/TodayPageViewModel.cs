@@ -12,13 +12,9 @@ public class TodayPageViewModel : BaseViewModel
 	private string remainingTime;
 
 	private float scrollAmount;
+	private string description;
 
 	#region Properties
-	public User User
-	{
-		get; set;
-	}
-
 	[Binding]
 	public string Today
 	{
@@ -71,6 +67,21 @@ public class TodayPageViewModel : BaseViewModel
 		}
 	}
 
+	[Binding]
+	public string Description
+	{
+		get
+		{
+			return this.description;
+		}
+		set
+		{
+			this.Set(ref this.description, value, nameof(this.Description));
+			UserLogic.Instance.SetDescription(value);
+
+		}
+	}
+
 	public List<Feeling> Feelings
 	{
 		get
@@ -88,20 +99,12 @@ public class TodayPageViewModel : BaseViewModel
 	private void Start()
 	{
 		this.Prepare();
-		this.User = this.LoadUser();
 
 		this.Today = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-		this.Hello = $"Hello, {this.User.Name}";
+		this.Hello = $"Hello, {UserLogic.Instance.User.Name}";
+		this.Description = UserLogic.Instance.User.Description;
 
 		this.RemainingTime = this.GetRemainingTime();
-	}
-
-	private User LoadUser()
-	{
-		return new User
-		{
-			Name = "Hélène"
-		};
 	}
 
 	private string GetRemainingTime()

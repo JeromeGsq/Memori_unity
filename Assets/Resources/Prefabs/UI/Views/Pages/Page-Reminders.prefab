@@ -327,10 +327,10 @@ GameObject:
   - component: {fileID: 3982483756178552318}
   - component: {fileID: 3982483756178552317}
   - component: {fileID: 8991005530082879957}
-  - component: {fileID: 2938005577608121830}
-  - component: {fileID: 6722172624205151042}
+  - component: {fileID: 7735536871720591733}
+  - component: {fileID: 138114378839705956}
   m_Layer: 5
-  m_Name: Page-Search
+  m_Name: Page-Reminders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2938005577608121830
+--- !u!114 &7735536871720591733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,10 +415,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3982483756178552315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d11ffa4d83c4f945aeb3a4a0880958f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9153b8befda605e449649f72b4991c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6722172624205151042
+--- !u!114 &138114378839705956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3982483756178552315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d6746aeea78ad04eb12b2368302841c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0406c173d2f795f4893463f947b19875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   appearanceType: 0

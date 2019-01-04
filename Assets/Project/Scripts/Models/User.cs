@@ -11,4 +11,9 @@ public class User
 	{
 		get; set;
 	}
+
+	public string Description
+	{
+		get; set;
+	}
 }
