@@ -13,5 +13,5 @@
 	public int Value
 	{
 		get; set;
-	}
+	} = 3;
 }

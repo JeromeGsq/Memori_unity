@@ -86,7 +86,7 @@ public class TodayPageViewModel : BaseViewModel
 	{
 		get
 		{
-			return UserLogic.Instance.User.Feelings;
+			return UserLogic.Instance.User.CurrentData.Feelings;
 		}
 	}
 	#endregion
@@ -102,8 +102,13 @@ public class TodayPageViewModel : BaseViewModel
 
 		this.Today = DateTime.Now.ToString("dddd, dd MMMM yyyy");
 		this.Hello = $"Hello, {UserLogic.Instance.User.Name}";
-		this.Description = UserLogic.Instance.User.Description;
+		this.Description = UserLogic.Instance.User.CurrentData.Description;
 
+		this.RemainingTime = this.GetRemainingTime();
+	}
+
+	private void OnEnable()
+	{
 		this.RemainingTime = this.GetRemainingTime();
 	}
 

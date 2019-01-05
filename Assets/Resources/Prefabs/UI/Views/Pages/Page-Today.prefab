@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 489431127768240648}
   - component: {fileID: 3745125976758188021}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1775,22 +1775,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3949767104847717319, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
+    - target: {fileID: 3743789270638154513, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3949767104847717319, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
+    - target: {fileID: 3743789270638154513, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3743789270638154513, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
+    - target: {fileID: 3949767104847717319, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3743789270638154513, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
+    - target: {fileID: 3949767104847717319, guid: 55ee2024e0d47d449b1d8fd2dfd5be26,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0

@@ -3,7 +3,7 @@
 public class App : MonoBehaviour {
 
 	protected void Start () {
-		NavigationService.Instance.ShowViewModel(typeof(MainTabbarViewModel));
+		NavigationService.Instance.ShowViewModel(typeof(SplashscreenViewModel));
 	}
 
 }

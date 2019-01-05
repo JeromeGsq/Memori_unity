@@ -30,6 +30,15 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 		});
 
 		this.InitFeelingViews(this.ViewModel?.Feelings);
+
+		LayoutRebuilder.MarkLayoutForRebuild(transform as RectTransform);
+	}
+
+	public override void OnEnable()
+	{
+		base.OnEnable();
+		LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
+		LayoutRebuilder.ForceRebuildLayoutImmediate(feelingAnchor as RectTransform);
 	}
 
 	public override void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
@@ -64,6 +73,7 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 			this.feelingViews.Add(feelingView);
 		}
 
-		LayoutRebuilder.MarkLayoutForRebuild(transform as RectTransform);
+		LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
+		LayoutRebuilder.ForceRebuildLayoutImmediate(feelingAnchor as RectTransform);
 	}
 }

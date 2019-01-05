@@ -1,12 +1,11 @@
-﻿using System;
-using UnityWeld.Binding;
+﻿using UnityWeld.Binding;
 
 [Binding]
 public class SliderViewModel : BaseViewModel
 {
 	private Feeling feeling = new Feeling();
 
-	private float currentAmount = 3;
+	private float currentAmount;
 	private string rating;
 
 	#region Properties
@@ -21,8 +20,6 @@ public class SliderViewModel : BaseViewModel
 		{
 			this.Set(ref this.currentAmount, value, nameof(this.CurrentAmount));
 			this.OnPropertyChanged(nameof(this.Rating));
-
-			UserLogic.Instance.SetFeelingValue(this.feeling.FeelingType, (int)value);
 		}
 	}
 
@@ -31,7 +28,7 @@ public class SliderViewModel : BaseViewModel
 	{
 		get
 		{
-			return $"{(int)this.CurrentAmount}/5" ;
+			return $"{(int)this.CurrentAmount}/5";
 		}
 	}
 
@@ -50,5 +47,15 @@ public class SliderViewModel : BaseViewModel
 		this.feeling = feeling;
 		this.CurrentAmount = this.feeling.Value;
 		this.RaiseAllPropertyChanged(typeof(SliderViewModel));
+	}
+
+	private void OnDisable()
+	{
+		UserLogic.Instance?.SetFeelingValue(this.feeling.FeelingType, (int)this.CurrentAmount);
+	}
+
+	private void OnDestroy()
+	{
+		UserLogic.Instance?.SetFeelingValue(this.feeling.FeelingType, (int)this.CurrentAmount);
 	}
 }
