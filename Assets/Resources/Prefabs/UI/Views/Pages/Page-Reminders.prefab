@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5611120469934636465}
   - component: {fileID: 1000542701765045150}
   - component: {fileID: 3516722341974013033}
+  - component: {fileID: 1769603722386933013}
   m_Layer: 5
   m_Name: PinkBand 1
   m_TagString: Untagged
@@ -91,6 +92,21 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 11400000, guid: c948a2676ce81a746bc9bf48bdbe4f35, type: 2}
   viewModelPropertyName: RemindersPageViewModel.ScrollAmount
   viewPropertyName: UnityEngine.UI.Image.fillAmount
+--- !u!114 &1769603722386933013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408336360703519069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.039215688}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &462363160452604284
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +595,7 @@ GameObject:
   - component: {fileID: 3530787351447476964}
   - component: {fileID: 2891881821305596570}
   - component: {fileID: 3202732487416933041}
+  - component: {fileID: 6960443575686584464}
   m_Layer: 5
   m_Name: PinkBand 2
   m_TagString: Untagged
@@ -658,6 +675,21 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 11400000, guid: 71e49d7435c38e64dbded13cc2e1aa2c, type: 2}
   viewModelPropertyName: RemindersPageViewModel.ScrollAmount
   viewPropertyName: UnityEngine.UI.Image.fillAmount
+--- !u!114 &6960443575686584464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771162545575446503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.039215688}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5098462038421834186
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +702,7 @@ GameObject:
   - component: {fileID: 7607600074230069204}
   - component: {fileID: 880295250846132032}
   - component: {fileID: 7580089477337702557}
+  - component: {fileID: 3023759305696972769}
   m_Layer: 5
   m_Name: PinkBand 5
   m_TagString: Untagged
@@ -749,6 +782,21 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 11400000, guid: 7d2a0b567c36857468bae6579a95282a, type: 2}
   viewModelPropertyName: RemindersPageViewModel.ScrollAmount
   viewPropertyName: UnityEngine.UI.Image.fillAmount
+--- !u!114 &3023759305696972769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098462038421834186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.039215688}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5487105794470921796
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +809,7 @@ GameObject:
   - component: {fileID: 1577480791665769970}
   - component: {fileID: 8737765558378508416}
   - component: {fileID: 2757219970292921613}
+  - component: {fileID: 4087623687327301561}
   m_Layer: 5
   m_Name: PinkBand 3
   m_TagString: Untagged
@@ -840,6 +889,21 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 11400000, guid: d0b14cebbf5369e47b0173c3cae6428a, type: 2}
   viewModelPropertyName: RemindersPageViewModel.ScrollAmount
   viewPropertyName: UnityEngine.UI.Image.fillAmount
+--- !u!114 &4087623687327301561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487105794470921796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.039215688}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6142103495042914103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1333,7 @@ GameObject:
   - component: {fileID: 15132993407020440}
   - component: {fileID: 9123410032099797988}
   - component: {fileID: 2178394738275844048}
+  - component: {fileID: 113304094510540675}
   m_Layer: 5
   m_Name: PinkBand 4
   m_TagString: Untagged
@@ -1348,6 +1413,21 @@ MonoBehaviour:
   viewAdapterOptions: {fileID: 11400000, guid: 66ff441d77329e54bbc2e07af02cc5a4, type: 2}
   viewModelPropertyName: RemindersPageViewModel.ScrollAmount
   viewPropertyName: UnityEngine.UI.Image.fillAmount
+--- !u!114 &113304094510540675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7945273498250795652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.039215688}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8899838249212227487
 GameObject:
   m_ObjectHideFlags: 0

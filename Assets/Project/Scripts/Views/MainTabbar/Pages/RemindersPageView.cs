@@ -24,9 +24,17 @@ public class RemindersPageView : BaseView<RemindersPageViewModel>
 	{
 		base.Start();
 
+		this.ViewModel?.SetScrollAmount(1);
 		this.scrollRect.onValueChanged.AddListener((vector) =>
 		{
-			this.ViewModel?.SetScrollAmount(this.scrollRect.verticalNormalizedPosition);
+			if(this.scrollRect.content.sizeDelta.y > Screen.height)
+			{
+				this.ViewModel?.SetScrollAmount(this.scrollRect.verticalNormalizedPosition);
+			}
+			else
+			{
+				this.ViewModel?.SetScrollAmount(1);
+			}
 		});
 
 		this.InitRemindersViews(this.ViewModel?.Reminders);
