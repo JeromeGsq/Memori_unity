@@ -15,27 +15,43 @@ public class ChartRenderer : MonoBehaviour
 	[SerializeField]
 	private float widthMultiplier = 0.6f;
 
-	private List<Vector3> points = new List<Vector3>();
+	private Coroutine coroutine;
+	private List<Vector3> points;
+
 	private Vector3[] smoothPoints;
+
+	public List<Vector3> Points
+	{
+		get
+		{
+			return this.points;
+		}
+		set
+		{
+			this.points = value;
+			this.SetPoints();
+		}
+	} 
 
 	private void OnEnable()
 	{
-		this.points.Clear();
-		this.line.positionCount = 0;
-
-		for(int i = 0; i < 30; i++)
-		{
-			points.Add(new Vector2(i, Random.Range(0, 5)));
-		}
-
-		this.smoothPoints = LineSmoother.SmoothLine(points.ToArray(), 0.1f);
-
 		this.line.widthMultiplier = widthMultiplier;
-
-		StartCoroutine(this.AddPoint());
 	}
 
-	IEnumerator<WaitForEndOfFrame> AddPoint()
+	private void SetPoints()
+	{
+		if(this.coroutine != null)
+		{
+			StopCoroutine(this.coroutine);
+			this.coroutine = null;
+		}
+
+		this.line.positionCount = 0;
+		this.smoothPoints = LineSmoother.SmoothLine(this.Points.ToArray(), 0.3f);
+		this.coroutine = StartCoroutine(this.AddPoint());
+	}
+
+	private IEnumerator<WaitForEndOfFrame> AddPoint()
 	{
 		foreach(var item in this.smoothPoints)
 		{

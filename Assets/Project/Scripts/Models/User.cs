@@ -36,10 +36,18 @@ public class User
 	{
 		this.Name = "Hélène";
 		this.Datas = new List<Data>();
-		foreach(DateTime date in DateTimeExtension.AllDatesInMonth(2019, 1))
+
+		for(int j = 2019; j <= 2021; j++)
 		{
-			this.Datas.Add(new Data().Init(date));
+			for(int i = 1; i <= 12; i++)
+			{
+				foreach(DateTime date in DateTimeExtension.AllDatesInMonth(j, i))
+				{
+					this.Datas.Add(new Data().Init(date));
+				}
+			}
 		}
+
 		this.Reminders = new List<Reminder>();
 		return this;
 	}
@@ -57,7 +65,7 @@ public class Reminder
 	{
 		get;
 		set;
-	} 
+	}
 
 	public string Content
 	{
@@ -120,6 +128,34 @@ public class Data
 				Title = "Amour",
 			},
 		};
+
+#if UNITY_EDITOR
+		this.Description = LoremIpsumExtension.LoremIpsum(1, 1, 0, 0, 0);
+		this.Feelings = new List<Feeling>()
+		{
+			new Feeling(UnityEngine.Random.Range(1, 5)){
+				FeelingType = FeelingType.Food,
+				Title = "Faim",
+			},
+			new Feeling(UnityEngine.Random.Range(1, 5)){
+				FeelingType = FeelingType.Social,
+				Title = "Social",
+			},
+			new Feeling(UnityEngine.Random.Range(1, 5)){
+				FeelingType = FeelingType.Power,
+				Title = "Energie",
+			},
+			new Feeling(UnityEngine.Random.Range(1, 5)){
+				FeelingType = FeelingType.Entertainment,
+				Title = "Divertissement",
+			},
+			new Feeling(UnityEngine.Random.Range(1, 5)){
+				FeelingType = FeelingType.Love,
+				Title = "Amour",
+			},
+		};
+#endif
+
 		return this;
 	}
 }

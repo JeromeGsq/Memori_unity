@@ -49,7 +49,6 @@ public class RemindersPageView : BaseView<RemindersPageViewModel>
 		LayoutRebuilder.ForceRebuildLayoutImmediate(reminderAnchor as RectTransform);
 	}
 
-
 	public override void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
 	{
 		base.OnPropertyChanged(sender, property);

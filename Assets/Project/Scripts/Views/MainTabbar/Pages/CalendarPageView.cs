@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿using System.ComponentModel;
+using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CalendarPageViewModel))]
 public class CalendarPageView : BasePageView<CalendarPageViewModel>
 {
+	[Space(20)]
+
+	[SerializeField]
+	private ChartRenderer chartRenderer;
+
 	[Space(20)]
 
 	[SerializeField]
@@ -25,5 +31,22 @@ public class CalendarPageView : BasePageView<CalendarPageViewModel>
 				this.ViewModel?.SetScrollAmount(1);
 			}
 		});
+
+		this.ConfigurePoints();
+	}
+
+	public override void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
+	{
+		base.OnPropertyChanged(sender, property);
+
+		if(property.PropertyName == nameof(this.ViewModel.Points))
+		{
+			this.ConfigurePoints();
+		}
+	}
+
+	private void ConfigurePoints()
+	{
+		this.chartRenderer.Points = this.ViewModel?.Points;
 	}
 }
