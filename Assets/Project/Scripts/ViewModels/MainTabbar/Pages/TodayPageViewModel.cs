@@ -5,8 +5,6 @@ using UnityWeld.Binding;
 [Binding]
 public class TodayPageViewModel : BaseViewModel
 {
-	private int index = 0;
-
 	private string hello;
 	private string today;
 	private string remainingTime;
@@ -90,15 +88,8 @@ public class TodayPageViewModel : BaseViewModel
 	}
 	#endregion
 
-	private void Prepare()
-	{
-		this.index = (int)this.Parameters;
-	}
-
 	private void Start()
 	{
-		this.Prepare();
-
 		this.Today = DateTime.Now.ToString("dddd, dd MMMM yyyy");
 		this.Hello = $"Hello, {UserLogic.Instance.User.Name}";
 		this.Description = UserLogic.Instance.User.CurrentData.Description;

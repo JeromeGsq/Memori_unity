@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 1185569968893325918}
   - component: {fileID: 2115439434844393934}
   - component: {fileID: 3949767104847717319}
-  - component: {fileID: 1016338418152982975}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -284,22 +283,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1016338418152982975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832423747302484337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c17a4101bcc9c24bb4f6db73a89a679, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewAdapterTypeName: 
-  viewAdapterOptions: {fileID: 0}
-  viewModelPropertyName: TodayPageViewModel.Description
-  viewPropertyName: TMPro.TextMeshProUGUI.text
 --- !u!1 &3416389937225325937
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +579,7 @@ GameObject:
   - component: {fileID: 7862994515672932667}
   - component: {fileID: 3095733440411572517}
   - component: {fileID: 2145978726401794149}
+  - component: {fileID: 7972801788419661431}
   m_Layer: 5
   m_Name: TextMeshPro - InputField
   m_TagString: Untagged
@@ -733,6 +717,28 @@ MonoBehaviour:
   m_RestoreOriginalTextOnEscape: 1
   m_isRichTextEditingAllowed: 1
   m_InputValidator: {fileID: 0}
+--- !u!114 &7972801788419661431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056213660679941447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7394c05d8f62049a112b9431211d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: ReminderViewModel.Content
+  viewEventName: TMPro.TMP_InputField.onValueChanged
+  viewPropertyName: TMPro.TMP_InputField.text
+  viewAdapterTypeName: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: 
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &6384580745660872106
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +751,8 @@ GameObject:
   - component: {fileID: 5706022081071113842}
   - component: {fileID: 1801541283218521719}
   - component: {fileID: 5876442620451065823}
+  - component: {fileID: 7179933550750596830}
+  - component: {fileID: 7091320097650601566}
   m_Layer: 5
   m_Name: Panel-Reminder
   m_TagString: Untagged
@@ -812,6 +820,30 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7179933550750596830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384580745660872106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c4fe23c2352be459840566f2cac29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7091320097650601566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384580745660872106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d853790d819794a80816531cdf04c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6859852933568192119
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +856,7 @@ GameObject:
   - component: {fileID: 685079540716838935}
   - component: {fileID: 6931854332645422348}
   - component: {fileID: 8805626804125407653}
+  - component: {fileID: 8723205818458348906}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -930,6 +963,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8723205818458348906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859852933568192119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34bef21c537b34d42ac448efcda1fbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelMethodName: ReminderViewModel.DeleteReminder
+  viewEventName: UnityEngine.UI.Button.onClick
+  parameter: 
 --- !u!1 &8591627139422765567
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +1012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.06, y: 0.43}
+  m_AnchoredPosition: {x: -1.0599976, y: 0.4300003}
   m_SizeDelta: {x: -5.37, y: -3.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4950986470158055206

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Root.DesignPatterns;
 
@@ -6,7 +7,7 @@ public class UserLogic : SceneSingleton<UserLogic>
 {
 	private const string UserCacheKey = "User";
 
-	public User user;
+	private User user;
 
 	public User User
 	{
@@ -49,11 +50,16 @@ public class UserLogic : SceneSingleton<UserLogic>
 		if(!string.IsNullOrEmpty(value))
 		{
 			this.User.CurrentData.Description = value;
-			this.SaveUser(this.User);
+			this.SaveUser();
 		}
 	}
 
-	public void SaveUser(User user)
+	public void SaveUser()
+	{
+		this.SaveUser(this.user);
+	}
+
+	private void SaveUser(User user)
 	{
 		var userSerialized = JsonConvert.SerializeObject(user);
 		ES2.Save(userSerialized, UserCacheKey);
@@ -66,7 +72,12 @@ public class UserLogic : SceneSingleton<UserLogic>
 		if(feeling != null)
 		{
 			feeling.Value = value;
-			this.SaveUser(this.User);
+			this.SaveUser();
 		}
+	}
+
+	public void DeleteReminder(Reminder reminder)
+	{
+		this.User.Reminders.Remove(reminder);
 	}
 }

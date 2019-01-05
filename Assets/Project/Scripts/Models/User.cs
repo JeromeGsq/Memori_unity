@@ -57,12 +57,20 @@ public class Reminder
 	{
 		get;
 		set;
-	}
+	} 
 
 	public string Content
 	{
 		get;
 		set;
+	}
+
+	public Reminder Init()
+	{
+		this.DateTime = DateTime.Now;
+		this.Title = "";
+		this.Content = "";
+		return this;
 	}
 }
 

@@ -20,10 +20,10 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropert
 	protected void Set<T>(ref T property, object value, string propertyName)
 	{
 		property = (T)value;
-		this.OnPropertyChanged(propertyName);
+		this.RaisePropertyChanged(propertyName);
 	}
 
-	protected void OnPropertyChanged(string propertyName)
+	protected void RaisePropertyChanged(string propertyName)
 	{
 		this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
@@ -32,7 +32,7 @@ public abstract class UnityViewModel : MonoBehaviour, IViewModel, INotifyPropert
 	{
 		foreach(var property in viewModelType.GetProperties())
 		{
-			this.OnPropertyChanged(property.Name);
+			this.RaisePropertyChanged(property.Name);
 		}
 	}
 }

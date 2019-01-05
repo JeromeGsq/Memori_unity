@@ -64,7 +64,7 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 			Destroy(item.gameObject);
 		}
 
-		Debug.LogWarning("InitFeelingViews() : generating feeling cells");
+		Debug.Log("InitFeelingViews() : Generating feeling cells");
 
 		foreach(var feeling in feelings)
 		{

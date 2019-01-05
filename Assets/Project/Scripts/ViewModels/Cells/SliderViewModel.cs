@@ -19,7 +19,7 @@ public class SliderViewModel : BaseViewModel
 		set
 		{
 			this.Set(ref this.currentAmount, value, nameof(this.CurrentAmount));
-			this.OnPropertyChanged(nameof(this.Rating));
+			this.RaisePropertyChanged(nameof(this.Rating));
 		}
 	}
 

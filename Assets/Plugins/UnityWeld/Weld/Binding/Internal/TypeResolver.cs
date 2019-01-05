@@ -317,8 +317,11 @@ namespace UnityWeld.Binding.Internal
 
 			if(methodParametersInfos != null && methodParametersInfos.Length > 0 && methodParametersInfos[0] != null)
 			{
-				var parameters = methodParametersInfos[0].ViewModelType.GetMethod(method).GetParameters()[0];
-				return parameters;
+				var parameters = methodParametersInfos[0].ViewModelType.GetMethod(method).GetParameters();
+				if(parameters != null && parameters.Length != 0)
+				{
+					return parameters[0];
+				}
 			}
 
 			return null;
