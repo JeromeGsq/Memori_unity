@@ -55,7 +55,7 @@ public class TodayPageViewModel : BaseViewModel
 	}
 
 	[Binding]
-	public Single ScrollAmount
+	public float ScrollAmount
 	{
 		get
 		{
@@ -78,7 +78,6 @@ public class TodayPageViewModel : BaseViewModel
 		{
 			this.Set(ref this.description, value, nameof(this.Description));
 			UserLogic.Instance.SetDescription(value);
-
 		}
 	}
 
