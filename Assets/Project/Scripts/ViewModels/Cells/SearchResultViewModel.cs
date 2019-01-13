@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SearchResultViewModel : BaseViewModel
 {
-	private SearchResult searchResult = new SearchResult();
+	private Data data = new Data();
 
 	public SearchPageViewModel SearchPageViewModel
 	{
@@ -12,10 +12,10 @@ public class SearchResultViewModel : BaseViewModel
 		set;
 	}
 
-	public void SetModel(SearchResult searchResult, SearchPageViewModel searchPageViewModel)
+	public void SetModel(Data data, SearchPageViewModel searchPageViewModel)
 	{
 		this.SearchPageViewModel = searchPageViewModel;
-		this.searchResult = searchResult;
+		this.data = data;
 		this.RaiseAllPropertyChanged(typeof(SearchResultViewModel));
 	}
 }

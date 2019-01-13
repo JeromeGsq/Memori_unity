@@ -37,8 +37,6 @@ public class SearchPageView : BasePageView<SearchPageViewModel>
 			}
 		});
 
-		this.InitSearchResultViews(this.ViewModel?.SearchResult);
-
 		LayoutRebuilder.MarkLayoutForRebuild(transform as RectTransform);
 	}
 
@@ -53,15 +51,15 @@ public class SearchPageView : BasePageView<SearchPageViewModel>
 	{
 		base.OnPropertyChanged(sender, property);
 
-		if(property.PropertyName == nameof(this.ViewModel.SearchResult))
+		if(property.PropertyName == nameof(this.ViewModel.Datas))
 		{
-			this.InitSearchResultViews(this.ViewModel.SearchResult);
+			this.InitSearchResultViews(this.ViewModel.Datas);
 		}
 	}
 
-	private void InitSearchResultViews(List<SearchResult> searchResults)
+	private void InitSearchResultViews(List<Data> datas)
 	{
-		if(searchResults == null)
+		if(datas == null)
 		{
 			Debug.LogWarning("InitRemindersViews() : SearchResults are null");
 			return;
@@ -74,10 +72,10 @@ public class SearchPageView : BasePageView<SearchPageViewModel>
 
 		Debug.Log("InitFeelingViews() : Generating searchResults cells");
 
-		foreach(var searchResult in searchResults)
+		foreach(var data in datas)
 		{
 			GameObject searchResultView = Instantiate(this.searchPrefab, this.searchAnchor);
-			searchResultView.GetComponent<SearchResultViewModel>().SetModel(searchResult, this.ViewModel);
+			searchResultView.GetComponent<SearchResultViewModel>().SetModel(data, this.ViewModel);
 			this.searchViews.Add(searchResultView);
 		}
 
