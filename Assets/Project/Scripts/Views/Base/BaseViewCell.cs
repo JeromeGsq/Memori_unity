@@ -1,4 +1,4 @@
-﻿public class BaseViewCell : UnityViewCell
+﻿public class BaseViewCell<T> : BaseView<T>
 {
 
 }

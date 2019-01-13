@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,8 +32,6 @@ public class CalendarPageView : BasePageView<CalendarPageViewModel>
 				this.ViewModel?.SetScrollAmount(1);
 			}
 		});
-
-		this.ConfigurePoints();
 	}
 
 	public override void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
@@ -41,8 +40,40 @@ public class CalendarPageView : BasePageView<CalendarPageViewModel>
 
 		if(property.PropertyName == nameof(this.ViewModel.Points))
 		{
+			this.ConfigureColors();
 			this.ConfigurePoints();
 		}
+	}
+
+	private void ConfigureColors()
+	{
+		var gradient = new Gradient();
+
+		switch(this.ViewModel.FeelingType)
+		{
+			case FeelingType.All:
+				gradient = this.allGradient;
+				break;
+			case FeelingType.Food:
+				gradient = this.foodGradient;
+				break;
+			case FeelingType.Social:
+				gradient = this.socialGradient;
+				break;
+			case FeelingType.Power:
+				gradient = this.powerGradient;
+				break;
+			case FeelingType.Entertainment:
+				gradient = this.entertainmentGradient;
+				break;
+			case FeelingType.Love:
+				gradient = this.loveGradient;
+				break;
+		}
+
+		this.chartRenderer.DotImage.color = gradient.colorKeys[0].color;
+
+		this.chartRenderer.Line.colorGradient = gradient;
 	}
 
 	private void ConfigurePoints()

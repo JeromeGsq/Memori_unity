@@ -91,7 +91,7 @@ public class TodayPageViewModel : BaseViewModel
 	private void Start()
 	{
 		this.Today = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-		this.Hello = $"Hello, {UserLogic.Instance.User.Name}";
+		this.Hello = $"Bonjour {UserLogic.Instance.User.Name}";
 		this.Description = UserLogic.Instance.User.CurrentData.Description;
 
 		this.RemainingTime = this.GetRemainingTime();

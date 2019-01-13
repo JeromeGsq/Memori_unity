@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(ReminderViewModel))]
-public class ReminderView : BaseViewCell
+public class ReminderView : BaseViewCell<ReminderViewModel>
 {
   
 }

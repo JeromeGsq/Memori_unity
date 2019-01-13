@@ -20,6 +20,15 @@ public class RemindersPageViewModel : BaseViewModel
 		}
 	}
 
+	[Binding]
+	public bool HasReminders
+	{
+		get
+		{
+			return UserLogic.Instance?.User?.Reminders?.Count != 0;
+		}
+	}
+
 	public List<Reminder> Reminders
 	{
 		get
@@ -33,6 +42,7 @@ public class RemindersPageViewModel : BaseViewModel
 	{
 		this.Reminders.Add(new Reminder().Init());
 		this.RaisePropertyChanged(nameof(this.Reminders));
+		this.RaisePropertyChanged(nameof(this.HasReminders));
 		UserLogic.Instance.SaveUser();
 	}
 
@@ -45,5 +55,6 @@ public class RemindersPageViewModel : BaseViewModel
 	{
 		this.Reminders.Remove(reminder);
 		this.RaisePropertyChanged(nameof(this.Reminders));
+		this.RaisePropertyChanged(nameof(this.HasReminders));
 	}
 }

@@ -1,4 +1,6 @@
-﻿public class BasePageView<T> : BaseView<T>, IPageView
+﻿using UnityEngine;
+
+public class BasePageView<T> : BaseView<T>, IPageView
 {
 	public void SetActive(bool active)
 	{

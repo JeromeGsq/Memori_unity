@@ -16,6 +16,26 @@ public class BaseView<T> : UnityView
 	[SerializeField]
 	private float duration = 0.2f;
 
+	[Space(20)]
+
+	[SerializeField]
+	protected Gradient allGradient;
+
+	[SerializeField]
+	protected Gradient foodGradient;
+
+	[SerializeField]
+	protected Gradient socialGradient;
+
+	[SerializeField]
+	protected Gradient powerGradient;
+
+	[SerializeField]
+	protected Gradient entertainmentGradient;
+
+	[SerializeField]
+	protected Gradient loveGradient;
+
 	protected CanvasGroup CanvasGroup
 	{
 		get;

@@ -1,8 +1,9 @@
 ﻿public enum FeelingType
 {
-	Food = 0,
-	Social = 1, 
-	Power = 2,
-	Entertainment = 3,
-	Love = 4
+	All = 0,
+	Food = 1,
+	Social = 2, 
+	Power = 3,
+	Entertainment = 4,
+	Love = 5,
 }

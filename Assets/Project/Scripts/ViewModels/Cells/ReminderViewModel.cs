@@ -39,6 +39,15 @@ public class ReminderViewModel : BaseViewModel
 			UserLogic.Instance.SaveUser();
 		}
 	}
+
+	[Binding]
+	public string Date
+	{
+		get
+		{
+			return this.reminder.DateTime.ToString("dd MMMM yyyy - HH:mm");
+		}
+	}
 	#endregion
 
 	[Binding]

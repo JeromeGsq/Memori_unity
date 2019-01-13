@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SearchResultView : BaseViewCell
+[RequireComponent(typeof(SearchPageViewModel))]
+public class SearchResultView : BaseViewCell<SearchPageViewModel>
 {
 
 }

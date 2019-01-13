@@ -5,7 +5,7 @@ using UnityWeld.Binding;
 [Binding]
 public class MainTabbarViewModel : BaseViewModel
 {
-	private const int SELECTED_INDEX = 1;
+	private const int SELECTED_INDEX = 0;
 
 	private int selectedIndex = SELECTED_INDEX;
 	private List<Tuple<Type, int>> tabs;
@@ -39,10 +39,10 @@ public class MainTabbarViewModel : BaseViewModel
 	private void Start()
 	{
 		this.Tabs = new List<Tuple<Type, int>>{
-			new Tuple<Type, int>(typeof(CalendarPageViewModel), 0),
-			new Tuple<Type, int>(typeof(TodayPageViewModel), 1),
-			new Tuple<Type, int>(typeof(SearchPageViewModel), 2),
-			new Tuple<Type, int>(typeof(RemindersPageViewModel), 3),
+			new Tuple<Type, int>(typeof(TodayPageViewModel), 0),
+			new Tuple<Type, int>(typeof(CalendarPageViewModel), 1),
+			new Tuple<Type, int>(typeof(RemindersPageViewModel), 2),
+			new Tuple<Type, int>(typeof(SearchPageViewModel), 3),
 		};
 	}
 

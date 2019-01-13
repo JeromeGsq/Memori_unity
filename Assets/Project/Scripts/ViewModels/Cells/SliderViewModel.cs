@@ -1,4 +1,6 @@
-﻿using UnityWeld.Binding;
+﻿using System;
+using UnityEngine;
+using UnityWeld.Binding;
 
 [Binding]
 public class SliderViewModel : BaseViewModel
@@ -7,6 +9,7 @@ public class SliderViewModel : BaseViewModel
 
 	private float currentAmount;
 	private string rating;
+	private Gradient gradient;
 
 	#region Properties
 	[Binding]
@@ -28,7 +31,20 @@ public class SliderViewModel : BaseViewModel
 	{
 		get
 		{
-			return $"{(int)this.CurrentAmount}/5";
+			return $"<size=120%>{(int)this.CurrentAmount}</size>/5";
+		}
+	}
+
+	[Binding]
+	public Gradient Gradient
+	{
+		get
+		{
+			return this.gradient;
+		}
+		set
+		{
+			this.Set(ref this.gradient, value, nameof(this.Gradient));
 		}
 	}
 
@@ -57,5 +73,10 @@ public class SliderViewModel : BaseViewModel
 	private void OnDestroy()
 	{
 		UserLogic.Instance?.SetFeelingValue(this.feeling.FeelingType, (int)this.CurrentAmount);
+	}
+
+	public void SetGradient(Gradient grandient)
+	{
+		this.Gradient = grandient;
 	}
 }

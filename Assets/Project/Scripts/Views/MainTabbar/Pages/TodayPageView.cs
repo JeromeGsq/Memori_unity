@@ -19,7 +19,7 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 
 	[SerializeField]
 	private ScrollRect scrollRect;
-
+	
 	public override void Start()
 	{
 		base.Start();
@@ -77,7 +77,30 @@ public class TodayPageView : BasePageView<TodayPageViewModel>
 		foreach(var feeling in feelings)
 		{
 			GameObject feelingView = Instantiate(this.feelingPrefab, this.feelingAnchor);
-			feelingView.GetComponent<SliderViewModel>().SetModel(feeling);
+			SliderViewModel viewModel = feelingView.GetComponent<SliderViewModel>();
+			viewModel.SetModel(feeling);
+			switch(feeling.FeelingType)
+			{
+				case FeelingType.All:
+					viewModel.SetGradient(this.allGradient);
+					break;
+				case FeelingType.Food:
+					viewModel.SetGradient(this.foodGradient);
+					break;
+				case FeelingType.Social:
+					viewModel.SetGradient(this.socialGradient);
+					break;
+				case FeelingType.Power:
+					viewModel.SetGradient(this.powerGradient);
+					break;
+				case FeelingType.Entertainment:
+					viewModel.SetGradient(this.entertainmentGradient);
+					break;
+				case FeelingType.Love:
+					viewModel.SetGradient(this.loveGradient);
+					break;
+			}
+
 			this.feelingViews.Add(feelingView);
 		}
 
