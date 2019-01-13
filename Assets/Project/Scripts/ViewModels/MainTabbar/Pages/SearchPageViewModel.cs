@@ -57,7 +57,11 @@ public class SearchPageViewModel : BaseViewModel
 	[Binding]
 	public void MakeSearch()
 	{
-		string keywords = this.Search;
-		this.Datas = UserLogic.Instance.User.Datas.Where(w => w.Description.Contains(keywords)).ToList();
+		string keywords = this.Search.ToLower();
+
+		if(!string.IsNullOrEmpty(keywords) && !string.IsNullOrWhiteSpace(keywords))
+		{
+			this.Datas = UserLogic.Instance.User.Datas.Where(w => w.Description.ToLower().Contains(keywords)).ToList();
+		}
 	}
 }

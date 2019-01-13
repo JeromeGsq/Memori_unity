@@ -24,6 +24,11 @@ public class UserLogic : SceneSingleton<UserLogic>
 	private void Awake()
 	{
 		this.user = this.LoadUser();
+		if(this.user.Datas.Find(w => w.DateTime.Date.Equals(DateTime.Now.Date)) == null)
+		{
+			this.user.Datas.Add(new Data().Init(DateTime.Now));
+			this.SaveUser();
+		}
 	}
 
 	public User LoadUser()

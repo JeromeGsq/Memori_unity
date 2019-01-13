@@ -75,7 +75,7 @@ public class SearchPageView : BasePageView<SearchPageViewModel>
 		foreach(var data in datas)
 		{
 			GameObject searchResultView = Instantiate(this.searchPrefab, this.searchAnchor);
-			searchResultView.GetComponent<SearchResultViewModel>().SetModel(data, this.ViewModel);
+			searchResultView.GetComponent<SearchResultViewModel>().SetModel(data);
 			this.searchViews.Add(searchResultView);
 		}
 

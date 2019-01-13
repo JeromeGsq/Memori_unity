@@ -37,17 +37,6 @@ public class User
 		this.Name = "Hélène";
 		this.Datas = new List<Data>();
 
-		for(int j = 2019; j <= 2021; j++)
-		{
-			for(int i = 1; i <= 12; i++)
-			{
-				foreach(DateTime date in DateTimeExtension.AllDatesInMonth(j, i))
-				{
-					this.Datas.Add(new Data().Init(date));
-				}
-			}
-		}
-
 		this.Reminders = new List<Reminder>();
 		return this;
 	}
